@@ -5,7 +5,7 @@ using Random = UnityEngine.Random;
 
 public class Obstacle : MonoBehaviour
 {
-    GameManager gameManager;
+    GameManager2 gameManager2;
 
     // 장애물 위치
     public float highPosY = 1f;
@@ -22,7 +22,7 @@ public class Obstacle : MonoBehaviour
 
     public void Start()
     {
-        gameManager = GameManager.Instance;
+        gameManager2 = GameManager2.Instance;
     }
 
     // 장애물 랜덤 소환
@@ -43,11 +43,11 @@ public class Obstacle : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        PlayerController player = other.GetComponent<PlayerController>();
+        MiniPlayer Miniplayer = other.GetComponent<MiniPlayer>();
 
-        if (player != null)
+        if (Miniplayer != null)
         {
-            gameManager.AddScore(1);
+            gameManager2.AddScore(1);
         }
     }
 }
