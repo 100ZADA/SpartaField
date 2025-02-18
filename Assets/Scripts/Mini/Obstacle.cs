@@ -11,7 +11,7 @@ public class Obstacle : MonoBehaviour
 
     // 장애물 사이즈
     public float holeSizeMin = 1f;
-    public float holeSizeMax = -1f;
+    public float holeSizeMax = 3f;
 
     public Transform topObject;
     public Transform bottomObject;
