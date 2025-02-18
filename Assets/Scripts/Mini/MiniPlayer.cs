@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class MiniPlayer : MonoBehaviour
 {
+    GameManager gameManager = null;
+
     Animator animator = null;
     Rigidbody2D _rigidbody = null;
 
@@ -21,6 +23,8 @@ public class MiniPlayer : MonoBehaviour
 
     void Start()
     {
+        gameManager = GameManager.Instance;
+
         animator = GetComponentInChildren<Animator>();
         _rigidbody = transform.GetComponent<Rigidbody2D>();
 
@@ -44,7 +48,7 @@ public class MiniPlayer : MonoBehaviour
             {
                 if (Input.GetMouseButtonDown(0))
                 {
-
+                    gameManager.RestartGame();
                 }
             }
             else
@@ -102,5 +106,6 @@ public class MiniPlayer : MonoBehaviour
 
         animator.SetInteger("IsDie", 1);
         deathCooldown = 1f;
+        gameManager.GameOver();
     }
 }

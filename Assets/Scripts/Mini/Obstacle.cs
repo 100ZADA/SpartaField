@@ -5,6 +5,8 @@ using Random = UnityEngine.Random;
 
 public class Obstacle : MonoBehaviour
 {
+    GameManager gameManager;
+
     // 장애물 위치
     public float highPosY = 1f;
     public float lowPosY = -1f;
@@ -17,6 +19,11 @@ public class Obstacle : MonoBehaviour
     public Transform bottomObject;
 
     public float widthPadding = 4f;
+
+    public void Start()
+    {
+        gameManager = GameManager.Instance;
+    }
 
     // 장애물 랜덤 소환
     public Vector3 SetRandomPlace(Vector3 lastPosition, int obstacleCount)
@@ -32,5 +39,15 @@ public class Obstacle : MonoBehaviour
         transform.position = placePosition;
 
         return placePosition;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        PlayerController player = other.GetComponent<PlayerController>();
+
+        if (player != null)
+        {
+            gameManager.AddScore(1);
+        }
     }
 }
