@@ -27,16 +27,6 @@ public class MiniPlayer : MonoBehaviour
 
         animator = transform.GetComponentInChildren<Animator>();
         _rigidbody = transform.GetComponent<Rigidbody2D>();
-
-        if(animator == null)
-        {
-            Debug.LogError("Not Founded Animator");
-        }
-        
-        if(_rigidbody == null)
-        {
-            Debug.LogError("Not Founded Rigidbody");
-        }
     }
 
     // 플레이어 조종 방법
@@ -48,7 +38,6 @@ public class MiniPlayer : MonoBehaviour
             {
                 if (Input.GetMouseButtonDown(0))
                 {
-                    gameManager2.RestartGame();
                 }
             }
             else

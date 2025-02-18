@@ -14,14 +14,36 @@ public class GameManager2 : MonoBehaviour
 
     private int currentScore = 0;
 
+    UIManager uiManager;
+    
+    public UIManager UIManager
+    {
+        get { return uiManager; }
+    }
+
     private void Awake()
     {
         gameManager2 = this;
+        uiManager = FindObjectOfType<UIManager>();
+    }
+
+    private void Start()
+    {
+        uiManager.UpdateScore(0);
     }
 
     public void GameOver()
     {
-        Debug.Log("Game Over");
+        // UI 호출 찾기
+        int bestScore = PlayerPrefs.GetInt("BestScore", 0);
+
+        if (currentScore < bestScore)
+        {
+            PlayerPrefs.SetInt("BestScore", currentScore);
+            PlayerPrefs.Save();
+        }
+
+        uiManager.ShowGameOverUI(currentScore);
     }
 
     public void RestartGame()
@@ -32,7 +54,6 @@ public class GameManager2 : MonoBehaviour
     public void AddScore(int score)
     {
         currentScore += score;
-
-        Debug.Log("Score : " + currentScore);
+        uiManager.UpdateScore(currentScore);
     }
 }
