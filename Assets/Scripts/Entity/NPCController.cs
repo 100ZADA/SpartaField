@@ -6,6 +6,9 @@ public class NPCController : MonoBehaviour
 {
     private bool isPlayerInRange = false;
 
+    // NPC의 개별 대사 출력
+    [SerializeField] private List<string> npcDialogue;
+
     // 플레이어가 범위 안으로 들어올때
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -27,5 +30,11 @@ public class NPCController : MonoBehaviour
     public bool CanTalk()
     {
         return isPlayerInRange;
+    }
+
+    // NPC 대사 반환
+    public List<string> GetDialogue()
+    {
+        return npcDialogue;
     }
 }

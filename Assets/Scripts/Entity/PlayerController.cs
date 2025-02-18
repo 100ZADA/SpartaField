@@ -38,14 +38,24 @@ public class PlayerController : BaseController
         // E키를 통해 호출
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (currentNPC != null && currentNPC.CanTalk())
+            if(currentNPC == null)
             {
-                List<string> npcDialogue = new List<string> { "Test 진행", "아무말이나 입력하세요", "afadsafadsf" };
-                DialogueManager.Instance.StartDialogue(npcDialogue);
+                Debug.Log(" 대화할 NPC가 없음!");
+                return;
             }
-            else
+
+            if (currentNPC.CanTalk())
             {
-                Debug.Log("대화 가능한 NPC 없음");
+                List<string> npcDialogue = currentNPC.GetDialogue(); // 현재 NPC 대화 가져오기
+                
+                if(npcDialogue.Count > 0)
+                {
+                    DialogueManager.Instance.StartDialogue(npcDialogue);
+                }
+                else
+                {
+                    Debug.Log("대화할 NPC가 없음!");
+                }
             }
         }
     }
