@@ -12,12 +12,13 @@ public class PlayerController : BaseController
     public void Init(GameManager gameManager)
     {
         this.gameManager = gameManager;
-        camera = Camera.main;
     }
 
     // 캐릭터 조작
     protected override void HandleAction()
     {
+        camera = Camera.main;
+
         float horizontal = Input.GetAxisRaw("Horizontal");  // 상하 조작
         float vertical = Input.GetAxisRaw("Vertical");  // 좌우 조작
         movementDirection = new Vector2(horizontal, vertical).normalized; // 벡터의 방향 1로 지정
