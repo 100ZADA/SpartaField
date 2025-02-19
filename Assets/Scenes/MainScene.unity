@@ -7687,7 +7687,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcDialogue:
   - "\uD798\uB4E4\uB2E4"
-  - "\uC544\uC9C1 \uCF54\uC5D0 \uB300\uD574 \uC815\uD655\uD558\uAC8C \uBAA8\uB974\uB294\uAC70
+  - "\uC544\uC9C1 \uCF54\uB529\uC5D0 \uB300\uD574 \uC815\uD655\uD558\uAC8C \uBAA8\uB974\uB294\uAC70
     \uAC19\uC544"
 --- !u!1 &1798584108
 GameObject:
