@@ -1581,6 +1581,97 @@ MonoBehaviour:
   player: {fileID: 449306719}
   minCameraBoundary: {x: -4.12, y: -4.01}
   maxCameraBoundary: {x: 4.12, y: 4.23}
+--- !u!1 &553818084
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 553818085}
+  - component: {fileID: 553818087}
+  - component: {fileID: 553818086}
+  m_Layer: 0
+  m_Name: TransScene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &553818085
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553818084}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.5, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &553818086
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553818084}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &553818087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553818084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6550953a57b4a545bb4ad42873aa8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transferMapName: MiniGameScene
 --- !u!1 &707966243
 GameObject:
   m_ObjectHideFlags: 0
@@ -11331,9 +11422,9 @@ Tilemap:
   - first: {x: -12, y: 0, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
+      m_TileMatrixIndex: 1
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
@@ -13660,13 +13751,17 @@ Tilemap:
       m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 468
+  - m_RefCount: 467
     m_Data: {fileID: 11400000, guid: 33d03a71915299d4ba92a286fb93637a, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 9acbe1f4b19d299498ae9ed5a9b53da7, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 468
+  - m_RefCount: 467
     m_Data: {fileID: 21300000, guid: ddc50884ea558914d929dd1912dd64b6, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: 63845c4f0f045ae4e9bef94857dfae7f, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 468
+  - m_RefCount: 467
     m_Data:
       e00: 1
       e01: 0
@@ -13684,6 +13779,24 @@ Tilemap:
       e31: 0
       e32: 0
       e33: 1
+  - m_RefCount: 1
+    m_Data:
+      e00: -1.000018
+      e01: -0.00000008685862
+      e02: -0.000000009917028
+      e03: 0
+      e10: -0.00000008742375
+      e11: 0.9935529
+      e12: 0.113442145
+      e13: 0
+      e20: -3.344051e-13
+      e21: 0.11344279
+      e22: -0.99354744
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
   m_TileColorArray:
   - m_RefCount: 468
     m_Data: {r: 1, g: 1, b: 1, a: 1}
@@ -13691,7 +13804,7 @@ Tilemap:
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -13, y: -9, z: 0}
-  m_Size: {x: 26, y: 18, z: 1}
+  m_Size: {x: 27, y: 18, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -13847,7 +13960,16 @@ MonoBehaviour:
   - "\uB098\uB294 \uAC8C\uC784 \uAD00\uB9AC\uC790\uC57C"
   - "\uB098\uB97C \uD1B5\uD574\uC11C \uD50C\uB798\uB2DB \uAC8C\uC784\uC744 \uD560
     \uC218 \uC788\uC5B4"
-  - 
+  - "\uAC8C\uC784 \uBC29\uBC95\uC740 \uC55E\uC73C\uB85C \uB098\uC544\uAC00\uB294
+    \uD50C\uB808\uC774\uC5B4\uB97C \uC7A5\uC560\uBB3C\uC5D0 \uBD80\uB52A\uD788\uC9C0
+    \uC54A\uAC8C \uD558\uB294 \uAC8C\uC784\uC774\uC57C"
+  - "\uB9C8\uC6B0\uC2A4 \uC6B0\uD074\uB9AD\uC744 \uD1B5\uD574\uC11C \uC7A5\uC560\uBB3C\uC744
+    \uD53C\uD560 \uC218 \uC788\uC9C0"
+  - "\uAC8C\uC784\uC774 \uB05D\uB098\uACE0 \uB098\uBA74 \uBCA0\uC2A4\uD2B8 \uC810\uC218\uC640
+    \uD604\uC7AC \uC810\uC218\uB97C \uC54C \uC218 \uC788\uC5B4"
+  - "\uAC8C\uC784\uC744 \uD50C\uB808\uC774\uD558\uACE0 \uC2F6\uC73C\uBA74 \uC606\uC5D0
+    \uC788\uB294 \uACC4\uB2E8\uC73C\uB85C \uAC00\uBA74 \uB3FC! "
+  - "\uD589\uC6B4\uC744 \uBE4C\uAC8C!"
 --- !u!1 &2012870774
 GameObject:
   m_ObjectHideFlags: 0
@@ -13982,3 +14104,4 @@ SceneRoots:
   - {fileID: 1720348676}
   - {fileID: 1632079896}
   - {fileID: 942871266}
+  - {fileID: 553818085}
