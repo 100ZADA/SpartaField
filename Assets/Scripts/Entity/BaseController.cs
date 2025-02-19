@@ -25,11 +25,6 @@ public class BaseController : MonoBehaviour
         animationHandler = GetComponent<AnimationHandler>();
     }
 
-    protected virtual void Start()
-    {
-
-    }
-
     // 클래스 상속 호출
     protected virtual void Update()
     {
