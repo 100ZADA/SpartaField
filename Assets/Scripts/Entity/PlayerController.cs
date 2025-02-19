@@ -40,7 +40,6 @@ public class PlayerController : BaseController
         {
             if(currentNPC == null)
             {
-                Debug.Log(" 대화할 NPC가 없음!");
                 return;
             }
 
@@ -51,10 +50,6 @@ public class PlayerController : BaseController
                 if(npcDialogue.Count > 0)
                 {
                     DialogueManager.Instance.StartDialogue(npcDialogue);
-                }
-                else
-                {
-                    Debug.Log("대화할 NPC가 없음!");
                 }
             }
         }
