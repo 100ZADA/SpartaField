@@ -6,14 +6,16 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public TextMeshProUGUI scoreText1;
+    public TextMeshProUGUI PlayscoreText;
     public TextMeshProUGUI ScoreText;
     public TextMeshProUGUI BestScoreText;
 
     public GameObject gameOverPanel;
 
+    public Button StartButton;
     public Button restartButton;
 
+    // 게임 재시작
     public void Start()
     {
         gameOverPanel.SetActive(false);
@@ -22,12 +24,17 @@ public class UIManager : MonoBehaviour
 
     public void UpdateScore(int score)
     {
-        scoreText1.text = score.ToString();
+        PlayscoreText.text = score.ToString();
+        ScoreText.text = score.ToString();
     }
 
-    public void ShowGameOverUI(int finalScore)
+    // 게임 오버시 UI 업데이트
+    public void ShowGameOverUI(int finalScore, int bestScore)
     {
         gameOverPanel.SetActive(true);
-        BestScoreText.text = finalScore.ToString();
+
+        PlayscoreText.text = finalScore.ToString();
+        ScoreText.text = finalScore.ToString();
+        BestScoreText.text = bestScore.ToString();
     }
 }

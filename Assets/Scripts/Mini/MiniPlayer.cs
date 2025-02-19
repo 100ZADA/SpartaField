@@ -27,6 +27,7 @@ public class MiniPlayer : MonoBehaviour
 
         animator = transform.GetComponentInChildren<Animator>();
         _rigidbody = transform.GetComponent<Rigidbody2D>();
+
     }
 
     // 플레이어 조종 방법
@@ -91,9 +92,19 @@ public class MiniPlayer : MonoBehaviour
             return;
         }
 
+        // 애니메이션 설정
         animator.SetInteger("IsDie", 1);
+
+        _rigidbody.velocity = Vector2.zero;  // 속도 0으로 설정
+        _rigidbody.angularVelocity = 0f;     // 회전 속도 멈춤
+        _rigidbody.constraints = RigidbodyConstraints2D.FreezeAll; // 모든 움직임 멈춤
+
+
+        // 사망 상태로 변경
         isDead = true;
         deathCooldown = 1f;
+
+        // 게임 오버 실행
         gameManager2.GameOver();
     }
 }

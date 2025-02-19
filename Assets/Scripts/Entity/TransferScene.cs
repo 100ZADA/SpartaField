@@ -10,7 +10,7 @@ public class TransferScene : MonoBehaviour
 
     void Start()
     {
-     
+
     }
 
     // 플레이어와 충돌 시

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class GameManager2 : MonoBehaviour
 {
@@ -27,33 +28,32 @@ public class GameManager2 : MonoBehaviour
         uiManager = FindObjectOfType<UIManager>();
     }
 
-    private void Start()
-    {
-        uiManager.UpdateScore(0);
-    }
-
-    public void GameOver()
-    {
-        // UI 호출 찾기
-        int bestScore = PlayerPrefs.GetInt("BestScore", 0);
-
-        if (currentScore < bestScore)
-        {
-            PlayerPrefs.SetInt("BestScore", currentScore);
-            PlayerPrefs.Save();
-        }
-
-        uiManager.ShowGameOverUI(currentScore);
-    }
-
+    // 재시작
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+   // 장애물 넘을시 점수 추가
     public void AddScore(int score)
     {
         currentScore += score;
         uiManager.UpdateScore(currentScore);
+    }
+
+    public void GameOver()
+    {
+        int bestScore = PlayerPrefs.GetInt("BestScore", 0);
+
+        // 최고 점수 저장
+        if (currentScore > bestScore)
+        {
+            PlayerPrefs.SetInt("BestScore", currentScore);
+            PlayerPrefs.Save();
+        }
+
+        bestScore = PlayerPrefs.GetInt("BestScore");
+
+        uiManager.ShowGameOverUI(currentScore, bestScore);
     }
 }
