@@ -4,11 +4,13 @@
  <bro>
 
  # 구성
+ ```bash
  Start Scene ━ MainScene ┳ MiniGame2Scene
                          ┗ MiniGameScene
 
 Start 버튼을 통해 MainScene으로 이동
 MainScene에서 두명의 NPC를 통해 MiniGamseScene들로 이동
+```
 
  <bro>
    
